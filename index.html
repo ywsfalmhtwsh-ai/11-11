@@ -1,66 +1,155 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d1b">
 <title>١١.١١ — شيء صغير لكِ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--night:#080d1b;--paper:#f8f0e8;--ink:#543b30;--gold:#d4b78c}*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}body{direction:rtl;unicode-bidi:plaintext;min-height:100vh;background:radial-gradient(ellipse at 50% 20%,#182944 0%,#080d1b 65%);color:var(--paper);font-family:'Noto Naskh Arabic',serif;overflow-x:hidden;padding:22px 0 45px}button,textarea,input{font:inherit;font-family:'Noto Naskh Arabic','Amiri',serif}textarea,input{direction:rtl;unicode-bidi:plaintext;text-align:center}#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 3s infinite ease-in-out}@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}.shooting-star{position:absolute;width:100px;height:1px;background:linear-gradient(90deg,#fff,transparent);transform:rotate(-35deg);animation:shoot 5s linear infinite;opacity:0}@keyframes shoot{0%{transform:translate(0,0) rotate(-35deg);opacity:0}5%{opacity:1}18%{transform:translate(-180px,120px) rotate(-35deg);opacity:0}100%{opacity:0}}.screen{position:relative;z-index:2;width:100%;max-width:440px;margin:auto}.hidden{display:none!important}.small-caption{text-align:center;color:var(--gold);letter-spacing:0;font-size:.8rem;margin-bottom:16px}#envelope-screen{padding:25px 16px}.envelope{position:relative;background:var(--paper);border:1px solid #e3d0bd;border-radius:12px;box-shadow:0 25px 65px #0009;overflow:hidden;perspective:1000px}.envelope-top{position:relative;z-index:2;height:58px;display:flex;justify-content:center;align-items:center;color:#967665;letter-spacing:1px;border-bottom:1px solid #e4d5c8}.letter-area{position:relative;z-index:2;padding:34px 18px 82px;min-height:220px}.intro-text{display:block;width:100%;height:135px;min-height:135px;max-height:135px;overflow-y:auto;resize:none;border:0;outline:0;background:transparent;text-align:center;color:var(--ink);font-family:'Amiri',serif;font-size:2rem;line-height:1.22;padding:0 3px 8px;}.intro-text::placeholder,.card-content::placeholder,.final-text::placeholder{color:#b7a092}.envelope-flap{position:absolute;top:58px;left:0;width:100%;height:34px;background:linear-gradient(160deg,#e7d7c7,#f4e8dc);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;z-index:1;transition:transform .8s ease;pointer-events:none;opacity:.55}.envelope.opening .envelope-flap{transform:rotateX(180deg)}.wax-seal{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:68px;height:68px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#d9a18c,#a65d59 48%,#713c43 100%);box-shadow:0 8px 20px #0005,inset 0 3px 6px #ffffff55,inset 0 -4px 7px #3d172d55;display:flex;justify-content:center;align-items:center;cursor:pointer;z-index:5;border:1px solid #c18b7a}.hint{text-align:center;margin-top:22px;color:#d4c4b0;font-style:italic;font-size:1.1rem}#cards-screen{padding:15px 14px 45px;animation:appear .8s ease}@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}.top-bar{position:relative;display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.back-btn,.music-btn{width:39px;height:39px;border-radius:50%;background:#ffffff18;color:var(--paper);border:1px solid #ffffff35;font-size:1.2rem;cursor:pointer}.cards-title{font-family:'Amiri',serif;font-size:1.65rem;font-style:italic}.music-status{text-align:center;color:var(--gold);font-size:.9rem;margin:0 0 12px}
-.music-hint{position:absolute;z-index:20;top:47px;left:0;right:auto;width:116px;min-height:68px;padding:10px 8px;border:1px solid #d4b78c88;border-radius:12px;background:#f8f0e8;color:#543b30;text-align:center;font-family:'Noto Naskh Arabic',serif;font-size:.92rem;line-height:1.15;box-shadow:0 8px 24px #0007;animation:hintIn .25s ease both;pointer-events:none}
-.music-hint:before{content:"";position:absolute;top:-7px;left:13px;right:auto;width:12px;height:12px;background:#f8f0e8;border-top:1px solid #d4b78c88;border-left:1px solid #d4b78c88;transform:rotate(45deg)}
+:root{--night:#080d1b;--paper:#f8f0e8;--ink:#543b30;--gold:#d4b78c}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{direction:rtl;min-height:100vh;background:radial-gradient(ellipse at 50% 20%,#182944 0%,#080d1b 65%);color:var(--paper);font-family:'Noto Naskh Arabic',serif;overflow-x:hidden;padding:22px 0 45px}
+button,textarea,input{font:inherit;font-family:'Noto Naskh Arabic','Amiri',serif}
+textarea,input{direction:rtl;unicode-bidi:plaintext;text-align:center}
+button{touch-action:manipulation}
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+.shooting-star{position:absolute;width:100px;height:1px;background:linear-gradient(90deg,#fff,transparent);transform:rotate(-35deg);animation:shoot 5s linear infinite;opacity:0}
+@keyframes shoot{0%{transform:translate(0,0) rotate(-35deg);opacity:0}5%{opacity:1}18%{transform:translate(-180px,120px) rotate(-35deg);opacity:0}100%{opacity:0}}
+.screen{position:relative;z-index:2;width:100%;max-width:440px;margin:auto}
+.hidden{display:none!important}
+.small-caption{text-align:center;color:var(--gold);font-size:.8rem;margin-bottom:16px}
+#envelope-screen{padding:25px 16px}
+.envelope{position:relative;background:var(--paper);border:1px solid #e3d0bd;border-radius:12px;box-shadow:0 25px 65px #0009;overflow:hidden}
+.envelope-top{position:relative;z-index:2;height:58px;display:flex;justify-content:center;align-items:center;color:#967665;letter-spacing:1px;border-bottom:1px solid #e4d5c8}
+.letter-area{position:relative;z-index:2;padding:34px 18px 82px;min-height:220px}
+.intro-text{display:block;width:100%;height:135px;min-height:135px;max-height:180px;overflow-y:auto;resize:vertical;border:0;outline:0;background:transparent;color:var(--ink);font-family:'Amiri',serif;font-size:1.65rem;line-height:1.35;padding:0 3px 8px}
+.intro-text::placeholder,.reason-body-input::placeholder,.reason-title-input::placeholder,.final-text::placeholder{color:#b7a092}
+.envelope-flap{position:absolute;top:58px;left:0;width:100%;height:34px;background:linear-gradient(160deg,#e7d7c7,#f4e8dc);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;z-index:1;transition:transform .8s ease;pointer-events:none;opacity:.55}
+.envelope.opening .envelope-flap{transform:rotateX(180deg)}
+.wax-seal{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);width:68px;height:68px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#d9a18c,#a65d59 48%,#713c43 100%);box-shadow:0 8px 20px #0005,inset 0 3px 6px #ffffff55,inset 0 -4px 7px #3d172d55;display:flex;justify-content:center;align-items:center;cursor:pointer;z-index:5;border:1px solid #c18b7a}
+.wax-seal:focus-visible,.card-cover:focus-visible,button:focus-visible{outline:3px solid #f2d6a8;outline-offset:3px}
+.seal-flower{width:44px;height:44px;filter:drop-shadow(0 1px 1px #4b202055)}
+.hint{text-align:center;margin-top:22px;color:#d4c4b0;font-style:italic;font-size:1.05rem}
+.demo-note{text-align:center;color:#d4c4b0a8;font-size:.82rem;margin-top:16px;line-height:1.6}
+#cards-screen{padding:15px 14px 45px;animation:appear .8s ease}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.top-bar{position:relative;display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}
+.back-btn,.music-btn{width:39px;height:39px;border-radius:50%;background:#ffffff18;color:var(--paper);border:1px solid #ffffff35;font-size:1.2rem;cursor:pointer}
+.cards-title{font-family:'Amiri',serif;font-size:1.65rem}
+.music-status{text-align:center;color:var(--gold);font-size:.85rem;margin:0 0 12px;min-height:25px}
+.music-hint{position:absolute;z-index:20;top:47px;left:0;width:116px;min-height:68px;padding:10px 8px;border:1px solid #d4b78c88;border-radius:12px;background:#f8f0e8;color:#543b30;text-align:center;font-size:.88rem;line-height:1.3;box-shadow:0 8px 24px #0007;animation:hintIn .25s ease both;pointer-events:none}
+.music-hint:before{content:"";position:absolute;top:-7px;left:13px;width:12px;height:12px;background:#f8f0e8;border-top:1px solid #d4b78c88;border-left:1px solid #d4b78c88;transform:rotate(45deg)}
 .music-hint.hide{animation:hintOut .3s ease forwards}
 @keyframes hintIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
-@keyframes hintOut{to{opacity:0;transform:translateY(-5px)}}.progress{text-align:center;color:var(--gold);font-style:italic;margin-bottom:17px;font-size:1.05rem}.progress-track{height:3px;background:#ffffff25;border-radius:5px;margin:8px auto 0;max-width:210px;overflow:hidden}.progress-fill{width:0;height:100%;background:var(--gold);transition:width .4s}.cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.card{position:relative;min-height:155px;border-radius:12px;background:var(--paper);box-shadow:0 10px 25px #0006;overflow:hidden;transition:transform .3s}.card:active{transform:scale(.98)}.card:last-child{grid-column:1/-1;max-width:220px;width:100%;margin:0 auto}.card-cover{position:absolute;inset:0;z-index:2;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:8px;background:linear-gradient(145deg,#203d60,#0c1c32);color:#e2d5c2;font-family:'Amiri',serif;font-size:2rem;cursor:pointer;transition:opacity .5s,transform .5s}.card-cover span{font-family:'Noto Naskh Arabic',serif;font-size:.85rem;letter-spacing:0;font-style:italic}.card.revealed .card-cover{opacity:0;transform:scale(1.1);pointer-events:none}.card-content{display:block;width:100%;min-height:155px;padding:25px 15px 20px;resize:vertical;border:0;outline:0;background:transparent;text-align:center;color:var(--ink);font-family:'Amiri',serif;font-size:1.5rem;line-height:1.4}.card-close{display:none;position:absolute;top:5px;right:8px;width:25px;height:25px;border-radius:50%;background:#0002;color:var(--ink);justify-content:center;align-items:center;cursor:pointer;z-index:3;border:0}.card.revealed .card-close{display:flex}
-/* The card grid becomes a title index after a reason has been opened. */
-.card{cursor:pointer;}
-.card.visited{background:linear-gradient(145deg,#f9f1e8,#e9d9c8);}
-.card.visited .card-cover{display:none;}
-.card-title-preview{display:none;min-height:155px;padding:18px 12px;align-items:center;justify-content:center;text-align:center;color:var(--ink);font-family:'Amiri',serif;font-size:1.05rem;font-style:italic;line-height:1.35;overflow-wrap:anywhere;}
-.card.visited .card-title-preview{display:flex;}
-#reason-modal{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(3,6,15,.82);backdrop-filter:blur(4px);}
-#reason-modal.show{display:flex;}
-.reason-window{position:relative;width:100%;max-width:390px;max-height:82vh;overflow:auto;background:linear-gradient(145deg,#fff9f1,#f0e3d5);color:var(--ink);border:1px solid #e3cdb9;border-radius:17px;padding:45px 23px 25px;box-shadow:0 25px 70px #0009;animation:popIn .28s ease;}
+@keyframes hintOut{to{opacity:0;transform:translateY(-5px)}}
+.progress{text-align:center;color:var(--gold);font-style:italic;margin-bottom:17px;font-size:1rem}
+.progress-track{height:3px;background:#ffffff25;border-radius:5px;margin:8px auto 0;max-width:210px;overflow:hidden}
+.progress-fill{width:0;height:100%;background:var(--gold);transition:width .4s}
+.cards-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.card{position:relative;min-height:155px;border:0;border-radius:12px;background:var(--paper);box-shadow:0 10px 25px #0006;overflow:hidden;padding:0;cursor:pointer}
+.card:active{transform:scale(.98)}
+.card:last-child{grid-column:1/-1;max-width:220px;width:100%;margin:0 auto}
+.card-cover{position:absolute;inset:0;z-index:2;display:flex;justify-content:center;align-items:center;flex-direction:column;gap:8px;background:linear-gradient(145deg,#203d60,#0c1c32);color:#e2d5c2;font-family:'Amiri',serif;font-size:2rem;transition:opacity .5s,transform .5s}
+.card-cover span{font-family:'Noto Naskh Arabic',serif;font-size:.85rem;font-style:italic}
+.card.visited .card-cover{opacity:0;transform:scale(1.1);pointer-events:none}
+.card-title-preview{display:flex;min-height:155px;padding:18px 12px;align-items:center;justify-content:center;text-align:center;color:var(--ink);font-family:'Amiri',serif;font-size:1.12rem;font-style:italic;line-height:1.4;overflow-wrap:anywhere}
+.card:not(.visited) .card-title-preview{visibility:hidden}
+#reason-modal{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(3,6,15,.82);backdrop-filter:blur(4px)}
+#reason-modal.show{display:flex}
+.reason-window{position:relative;width:100%;max-width:390px;max-height:82vh;overflow:auto;background:linear-gradient(145deg,#fff9f1,#f0e3d5);color:var(--ink);border:1px solid #e3cdb9;border-radius:17px;padding:45px 23px 25px;box-shadow:0 25px 70px #0009;animation:popIn .28s ease}
 @keyframes popIn{from{opacity:0;transform:translateY(15px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
-.reason-x{position:absolute;top:11px;right:12px;width:31px;height:31px;border:0;border-radius:50%;background:#6b49351b;color:#654638;font-size:1.35rem;cursor:pointer;}
-.reason-number{font-size:.9rem;letter-spacing:0;text-align:center;color:#a17d64;margin-bottom:12px;}
-.reason-title-input{width:100%;border:0;border-bottom:1px solid #d8c4b2;background:transparent;outline:0;text-align:center;color:#634536;font-family:'Amiri',serif;font-size:1.35rem;font-style:italic;padding:8px 4px 13px;margin-bottom:15px;}
-.reason-body-input{width:100%;min-height:180px;resize:vertical;border:0;outline:0;background:transparent;color:var(--ink);text-align:center;font-family:'Amiri',serif;font-size:1.65rem;line-height:1.5;padding:8px;}
-.seal-flower{width:44px;height:44px;filter:drop-shadow(0 1px 1px #4b202055);}
-#final-section{margin-top:30px;text-align:center;animation:appear .9s ease}.final-heading{color:var(--gold);font-family:'Amiri',serif;font-style:italic;font-size:1.5rem;margin-bottom:15px}.final-card{position:relative;background:var(--paper);color:var(--ink);border-radius:13px;padding:25px 20px;box-shadow:0 12px 30px #0006;min-height:150px}.final-text{width:100%;min-height:110px;resize:vertical;outline:0;border:0;background:transparent;color:var(--ink);text-align:center;font-family:'Amiri',serif;font-size:1.65rem;line-height:1.5}.final-cover{position:absolute;inset:0;border-radius:13px;background:linear-gradient(145deg,#682c39,#321b2c);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#f7dfc4;font-family:'Amiri',serif;font-style:italic;font-size:1.2rem;cursor:pointer;transition:opacity .6s}.final-card.revealed .final-cover{opacity:0;pointer-events:none}.seal-btn{display:block;width:100%;margin-top:25px;padding:15px;background:linear-gradient(135deg,#c45c5c,#81252d);border:0;border-radius:50px;color:white;font-size:1.15rem;cursor:pointer;box-shadow:0 8px 20px #0005}.footer-note{text-align:center;color:#d4c4b080;margin-top:20px;font-style:italic}#zoom-modal{position:fixed;inset:0;z-index:100;display:none;justify-content:center;align-items:center;padding:22px;background:#080a14ee}#zoom-modal.show{display:flex}.zoom-box{width:100%;max-width:380px;background:var(--paper);color:var(--ink);border-radius:16px;padding:45px 25px 30px;font-family:'Amiri',serif;font-size:1.7rem;line-height:1.5;text-align:center;position:relative;animation:appear .3s}.zoom-close{position:absolute;top:10px;right:12px;border:0;background:#0002;border-radius:50%;width:30px;height:30px;cursor:pointer;color:var(--ink)}.demo-note{text-align:center;color:#d4c4b0a8;font-size:.85rem;margin-top:16px}@media(max-width:350px){.cards-grid{gap:9px}.card-content{font-size:1.3rem}}
-</style></head><body>
-<div id="sky"></div>
-<section id="envelope-screen" class="screen"><div class="small-caption">شيء صغير من أجلكِ</div><div class="envelope" id="envelope"><div class="envelope-top">١١ · ١١</div><div class="letter-area"><textarea dir="rtl" id="introText" class="intro-text" placeholder="Write your introduction here..."></textarea></div><div class="envelope-flap"></div><button class="wax-seal" id="waxSeal" aria-label="افتحي الرسالة">
-<svg class="seal-flower" viewBox="0 0 64 64" aria-hidden="true">
- <g fill="#f1d9c7" stroke="#78434a" stroke-width="1.1" opacity=".96">
-  <ellipse cx="32" cy="17" rx="6" ry="12"/><ellipse cx="32" cy="47" rx="6" ry="12"/>
-  <ellipse cx="17" cy="32" rx="12" ry="6"/><ellipse cx="47" cy="32" rx="12" ry="6"/>
-  <ellipse cx="21.5" cy="21.5" rx="6" ry="11" transform="rotate(-45 21.5 21.5)"/>
-  <ellipse cx="42.5" cy="21.5" rx="6" ry="11" transform="rotate(45 42.5 21.5)"/>
-  <ellipse cx="21.5" cy="42.5" rx="6" ry="11" transform="rotate(45 21.5 42.5)"/>
-  <ellipse cx="42.5" cy="42.5" rx="6" ry="11" transform="rotate(-45 42.5 42.5)"/>
- </g><circle cx="32" cy="32" r="6" fill="#d9b17c" stroke="#78434a" stroke-width="1.2"/>
- <path d="M32 38 Q29 47 23 51 M27 46 Q20 43 18 47 M29 44 Q36 42 39 46" fill="none" stroke="#e4cdb0" stroke-width="2" stroke-linecap="round"/>
-</svg></button></div><div class="hint">اضغطي على الختم لفتح الرسالة</div><div class="demo-note">سيُضمّن في الرابط كلّ ما كتبتِه: المقدّمة، والأسباب الأحد عشر، والرسالة الأخيرة.</div></section>
-<section id="cards-screen" class="screen hidden"><div class="top-bar"><button class="back-btn" id="backBtn">×</button><div class="cards-title">أحد عشر سببًا</div><button class="music-btn" id="musicBtn" aria-label="تشغيل الموسيقى">♫</button><div id="musicHint" class="music-hint hidden">اضغطي هنا للاستمتاع بالتجربة كاملة<br><small>(اختياري)</small></div></div><div class="music-status" id="musicStatus">أضيفي ملف music.mp3 بجانب الصفحة لتشغيل الموسيقى</div><div class="progress"><span id="progressText">اكتشفتِ ٠ من أصل ١١ سببًا</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div><div class="cards-grid" id="cardsGrid"></div><section id="final-section" class="hidden"><div class="final-heading">وأمرٌ أخير...</div><div class="final-card" id="finalCard"><textarea dir="rtl" id="finalText" class="final-text" placeholder="اكتبي رسالتكِ الأخيرة هنا..."></textarea><div class="final-cover" id="finalCover"><div>♡</div><div>رسالة أخيرة</div><span style="font-size:.9rem">لكِ وحدكِ</span></div></div></section><button class="seal-btn" id="sealEverything">اختمي الرسالة وأنشئي رابطًا دائمًا</button><div class="footer-note">صُنعت هذه الرسالة بقطعة صغيرة من قلبي.</div></section>
+.reason-x{position:absolute;top:11px;right:12px;width:31px;height:31px;border:0;border-radius:50%;background:#6b49351b;color:#654638;font-size:1.35rem;cursor:pointer}
+.reason-number{text-align:center;color:#a17d64;margin-bottom:12px}
+.reason-title-input{width:100%;border:0;border-bottom:1px solid #d8c4b2;background:transparent;outline:0;text-align:center;color:#634536;font-family:'Amiri',serif;font-size:1.35rem;font-style:italic;padding:8px 4px 13px;margin-bottom:15px}
+.reason-body-input{width:100%;min-height:180px;resize:vertical;border:0;outline:0;background:transparent;color:var(--ink);text-align:center;font-family:'Amiri',serif;font-size:1.55rem;line-height:1.5;padding:8px}
+.readonly-note{text-align:center;color:#9b806d;font-size:.9rem;margin-top:8px}
+#final-section{margin-top:30px;text-align:center;animation:appear .9s ease}
+.final-heading{color:var(--gold);font-family:'Amiri',serif;font-style:italic;font-size:1.5rem;margin-bottom:15px}
+.final-card{position:relative;background:var(--paper);color:var(--ink);border-radius:13px;padding:25px 20px;box-shadow:0 12px 30px #0006;min-height:150px}
+.final-text{width:100%;min-height:110px;resize:vertical;outline:0;border:0;background:transparent;color:var(--ink);text-align:center;font-family:'Amiri',serif;font-size:1.55rem;line-height:1.5}
+.final-cover{position:absolute;inset:0;border-radius:13px;background:linear-gradient(145deg,#682c39,#321b2c);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#f7dfc4;font-family:'Amiri',serif;font-style:italic;font-size:1.2rem;cursor:pointer;transition:opacity .6s}
+.final-card.revealed .final-cover{opacity:0;pointer-events:none}
+.seal-btn{display:block;width:100%;margin-top:25px;padding:15px;background:linear-gradient(135deg,#c45c5c,#81252d);border:0;border-radius:50px;color:white;font-size:1.05rem;cursor:pointer;box-shadow:0 8px 20px #0005}
+.footer-note{text-align:center;color:#d4c4b080;margin-top:20px;font-style:italic}
+#share-panel{margin-top:16px;padding:16px;background:#ffffff12;border:1px solid #ffffff30;border-radius:13px;text-align:center}
+#shareLink{width:100%;margin:10px 0;padding:10px;border:1px solid #ffffff40;border-radius:8px;background:#080d1b;color:#fff;direction:ltr;font-size:.78rem}
+.copy-btn{padding:10px 20px;border:0;border-radius:30px;background:#d4b78c;color:#241a19;cursor:pointer}
+#zoom-modal{position:fixed;inset:0;z-index:100;display:none;justify-content:center;align-items:center;padding:22px;background:#080a14ee}
+#zoom-modal.show{display:flex}
+@media(max-width:350px){.cards-grid{gap:9px}.card-title-preview{font-size:1rem}}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<section id="envelope-screen" class="screen">
+ <div class="small-caption">شيء صغير من أجلكِ</div>
+ <div class="envelope" id="envelope">
+  <div class="envelope-top">١١ · ١١</div>
+  <div class="letter-area"><textarea dir="rtl" id="introText" class="intro-text" placeholder="اكتبي مقدّمتكِ هنا..."></textarea></div>
+  <div class="envelope-flap"></div>
+  <button type="button" class="wax-seal" id="waxSeal" aria-label="افتحي الرسالة">
+   <svg class="seal-flower" viewBox="0 0 64 64" aria-hidden="true">
+    <g fill="#f1d9c7" stroke="#78434a" stroke-width="1.1" opacity=".96">
+     <ellipse cx="32" cy="17" rx="6" ry="12"/><ellipse cx="32" cy="47" rx="6" ry="12"/><ellipse cx="17" cy="32" rx="12" ry="6"/><ellipse cx="47" cy="32" rx="12" ry="6"/>
+     <ellipse cx="21.5" cy="21.5" rx="6" ry="11" transform="rotate(-45 21.5 21.5)"/><ellipse cx="42.5" cy="21.5" rx="6" ry="11" transform="rotate(45 42.5 21.5)"/><ellipse cx="21.5" cy="42.5" rx="6" ry="11" transform="rotate(45 21.5 42.5)"/><ellipse cx="42.5" cy="42.5" rx="6" ry="11" transform="rotate(-45 42.5 42.5)"/>
+    </g><circle cx="32" cy="32" r="6" fill="#d9b17c" stroke="#78434a" stroke-width="1.2"/>
+    <path d="M32 38 Q29 47 23 51 M27 46 Q20 43 18 47 M29 44 Q36 42 39 46" fill="none" stroke="#e4cdb0" stroke-width="2" stroke-linecap="round"/>
+   </svg>
+  </button>
+ </div>
+ <div class="hint" id="envelopeHint">اضغطي على الختم لفتح الرسالة</div>
+</section>
+
+<section id="cards-screen" class="screen hidden">
+ <div class="top-bar">
+  <button type="button" class="back-btn" id="backBtn" aria-label="العودة">×</button>
+  <div class="cards-title">أحد عشر سببًا</div>
+  <button type="button" class="music-btn" id="musicBtn" aria-label="تشغيل الموسيقى">♫</button>
+  <div id="musicHint" class="music-hint hidden">اضغطي هنا للاستمتاع بالتجربة كاملة<br><small>(اختياري)</small></div>
+ </div>
+ <div class="music-status hidden" id="musicStatus" aria-live="polite"></div>
+ <div class="progress"><span id="progressText">اكتشفتِ ٠ من أصل ١١ سببًا</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div></div>
+ <div class="cards-grid" id="cardsGrid"></div>
+ <section id="final-section" class="hidden">
+  <div class="final-heading">وأمرٌ أخير...</div>
+  <div class="final-card" id="finalCard">
+   <textarea dir="rtl" id="finalText" class="final-text" placeholder="اكتبي رسالتكِ الأخيرة هنا..."></textarea>
+   <div class="final-cover" id="finalCover"><div>♡</div><div>رسالة أخيرة</div><span style="font-size:.9rem">لكِ وحدكِ</span></div>
+  </div>
+ </section>
+ <button type="button" class="seal-btn" id="sealEverything">اختمي الرسالة وأنشئي رابطًا دائمًا</button>
+ <div id="share-panel" class="hidden">
+  <div>تم تجهيز رابط رسالتكِ ♡</div>
+  <input id="shareLink" readonly aria-label="رابط الرسالة">
+  <button type="button" class="copy-btn" id="copyLink">نسخ الرابط</button>
+  <div class="demo-note">ارفعي ملف index.html إلى GitHub Pages أولًا، ثم استخدمي هذا الرابط. سيعرض للزائرة نسخة للقراءة فقط.</div>
+ </div>
+ <div class="footer-note">صُنعت هذه الرسالة بقطعة صغيرة من قلبي.</div>
+</section>
+
 <div id="reason-modal" aria-hidden="true">
  <div class="reason-window" role="dialog" aria-modal="true" aria-labelledby="reasonTitle">
-  <button class="reason-x" id="reasonClose" aria-label="إغلاق السبب">×</button>
+  <button type="button" class="reason-x" id="reasonClose" aria-label="إغلاق السبب">×</button>
   <div class="reason-number" id="reasonNumber">السبب ٠١</div>
   <input dir="rtl" id="reasonTitle" class="reason-title-input" maxlength="70" placeholder="اكتبي عنوان هذا السبب...">
   <textarea dir="rtl" id="reasonBody" class="reason-body-input" placeholder="اكتبي ما تودّين أن تعرفه..."></textarea>
+  <div id="readonlyNote" class="readonly-note hidden">هذه الرسالة لكِ لتقرئيها فقط ♡</div>
  </div>
 </div>
-<div id="zoom-modal"><div class="zoom-box"><button class="zoom-close" id="zoomClose">×</button><div id="zoomText"></div></div></div><audio id="backgroundMusic" loop preload="none" src="music.mp3"></audio>
-<script>
-const sky=document.getElementById('sky');
-for(let i=0;i<100;i++){const s=document.createElement('div');s.className='star';const z=Math.random()*2.5+1;s.style.width=z+'px';s.style.height=z+'px';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*4+'s';s.style.animationDuration=2+Math.random()*4+'s';sky.appendChild(s)}
-for(let i=0;i<3;i++){const s=document.createElement('div');s.className='shooting-star';s.style.top=10+Math.random()*65+'%';s.style.left=20+Math.random()*90+'%';s.style.animationDelay=i*4+Math.random()*3+'s';sky.appendChild(s)}
+<audio id="backgroundMusic" loop preload="none" src="music.mp3"></audio>
 
-const envelopeScreen=document.getElementById('envelope-screen'),cardsScreen=document.getElementById('cards-screen'),envelope=document.getElementById('envelope'),introText=document.getElementById('introText'),grid=document.getElementById('cardsGrid'),finalSection=document.getElementById('final-section'),finalCard=document.getElementById('finalCard'),finalText=document.getElementById('finalText');
-function fitIntro(){introText.style.height='135px';introText.style.overflowY='auto';}
-introText.addEventListener('input',fitIntro);
-const reasonModal=document.getElementById('reason-modal'),reasonTitle=document.getElementById('reasonTitle'),reasonBody=document.getElementById('reasonBody'),reasonNumber=document.getElementById('reasonNumber');
-let openedCount=0,sealedMode=false,currentCard=null;
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const sky=$('sky');
+for(let i=0;i<85;i++){const s=document.createElement('i');s.className='star';const z=Math.random()*2.5+1;s.style.cssText=`width:${z}px;height:${z}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*4}s;animation-duration:${2+Math.random()*4}s`;sky.appendChild(s)}
+for(let i=0;i<3;i++){const s=document.createElement('i');s.className='shooting-star';s.style.cssText=`top:${10+Math.random()*65}%;left:${20+Math.random()*90}%;animation-delay:${i*4+Math.random()*3}s`;sky.appendChild(s)}
+
 const samples=[
  ['ابتسامتكِ','لأن حضوركِ يجعل الأيام العادية مميّزة.'],
  ['طريقة تفكيركِ','لأنني أستطيع أن أكون على طبيعتي معكِ.'],
@@ -74,26 +163,137 @@ const samples=[
  ['أنتِ ببساطة','لأنكِ رائعة كما أنتِ.'],
  ['شخصي المفضّل','لأنكِ أنتِ، وهذا وحده يكفي.']
 ];
-const cardData=samples.map(([title,text])=>({title,text,visited:false}));
+let cardData=samples.map(([title,text])=>({title,text,visited:false}));
+let openedCount=0,currentCard=null,sealedMode=false,shareCreated=false;
+const envelopeScreen=$('envelope-screen'),cardsScreen=$('cards-screen'),envelope=$('envelope'),introText=$('introText');
+const grid=$('cardsGrid'),finalSection=$('final-section'),finalCard=$('finalCard'),finalText=$('finalText');
+const reasonModal=$('reason-modal'),reasonTitle=$('reasonTitle'),reasonBody=$('reasonBody');
+
 introText.value='إن كنتِ تقرئين هذه الكلمات الآن، فقد وجدت أخيرًا طريقة أضع بها جزءًا صغيرًا مما أشعر به في شيء يمكنكِ الاحتفاظ به. هذه أحد عشر سببًا، لكنها لن تتّسع لكل ما أودّ قوله لكِ. ♡';
 finalText.value='ولو خُيّرتُ من جديد، وفي كل حكاية وكل احتمال، لاخترتُ أن أصل إليكِ مرةً أخرى. شكرًا لأنكِ أنتِ. ♡';
-fitIntro();
 
-function renderCards(){grid.innerHTML='';cardData.forEach((item,i)=>{const c=document.createElement('button');c.type='button';c.className='card'+(item.visited?' visited':'');c.setAttribute('aria-label',item.visited?item.title:`افتحي السبب ${i+1}`);c.innerHTML=`<div class="card-cover">${i+1}<span>اضغطي لاكتشافه</span></div><div class="card-title-preview"></div>`;c.querySelector('.card-title-preview').textContent=item.title||`السبب ${i+1}`;c.addEventListener('click',()=>openReason(i));grid.appendChild(c)})}
-function updateProgress(){document.getElementById('progressText').textContent=`اكتشفتِ ${openedCount} من أصل ١١ سببًا`;document.getElementById('progressFill').style.width=(openedCount/11*100)+'%';if(openedCount===11)finalSection.classList.remove('hidden')}
-function openReason(i){currentCard=i;const item=cardData[i];reasonNumber.textContent=`السبب ${String(i+1).padStart(2,'0')}`;reasonTitle.value=item.title;reasonBody.value=item.text;reasonTitle.readOnly=sealedMode;reasonBody.readOnly=sealedMode;reasonModal.classList.add('show');reasonModal.setAttribute('aria-hidden','false');if(!item.visited){item.visited=true;openedCount++;renderCards();updateProgress()}setTimeout(()=>{if(!sealedMode)reasonTitle.focus()},100)}
-function closeReason(){if(currentCard!==null){cardData[currentCard].title=reasonTitle.value.trim();cardData[currentCard].text=reasonBody.value.trim();renderCards()}reasonModal.classList.remove('show');reasonModal.setAttribute('aria-hidden','true');currentCard=null}
-document.getElementById('reasonClose').addEventListener('click',closeReason);
+function encodeData(data){
+ const bytes=new TextEncoder().encode(JSON.stringify(data));
+ let binary='';for(let i=0;i<bytes.length;i++)binary+=String.fromCharCode(bytes[i]);
+ return btoa(binary).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/g,'');
+}
+function decodeData(encoded){
+ let b=encoded.replace(/-/g,'+').replace(/_/g,'/');
+ while(b.length%4)b+='=';
+ const raw=atob(b),bytes=Uint8Array.from(raw,c=>c.charCodeAt(0));
+ return JSON.parse(new TextDecoder().decode(bytes));
+}
+function payload(){return {v:1,intro:introText.value,reasons:cardData.map(({title,text})=>({title,text})),final:finalText.value};}
+function setReadOnly(){
+ sealedMode=true;
+ introText.readOnly=true;finalText.readOnly=true;
+ $('sealEverything').classList.add('hidden');
+ $('envelopeHint').textContent='اضغطي على الختم لفتح الرسالة';
+ $('readonlyNote').classList.remove('hidden');
+}
+function loadSharedData(){
+ const match=location.hash.match(/(?:^#|&)letter=([^&]+)/);
+ if(!match)return false;
+ try{
+  const d=decodeData(decodeURIComponent(match[1]));
+  if(!d||!Array.isArray(d.reasons)||d.reasons.length!==11)throw new Error('Invalid letter');
+  introText.value=String(d.intro??'');
+  cardData=d.reasons.map(r=>({title:String(r.title??''),text:String(r.text??''),visited:false}));
+  finalText.value=String(d.final??'');
+  setReadOnly();
+  return true;
+ }catch(err){console.warn('Could not read shared letter:',err);return false;}
+}
+function renderCards(){
+ grid.innerHTML='';
+ cardData.forEach((item,i)=>{
+  const c=document.createElement('button');c.type='button';c.className='card'+(item.visited?' visited':'');
+  c.setAttribute('aria-label',item.visited?item.title:`افتحي السبب ${i+1}`);
+  const cover=document.createElement('span');cover.className='card-cover';cover.innerHTML=`${i+1}<span>اضغطي لاكتشافه</span>`;
+  const preview=document.createElement('span');preview.className='card-title-preview';preview.textContent=item.title||`السبب ${i+1}`;
+  c.append(cover,preview);c.addEventListener('click',()=>openReason(i));grid.appendChild(c);
+ });
+}
+function updateProgress(){
+ $('progressText').textContent=`اكتشفتِ ${openedCount} من أصل ١١ سببًا`;
+ $('progressFill').style.width=(openedCount/11*100)+'%';
+ if(openedCount===11)finalSection.classList.remove('hidden');
+}
+function openReason(i){
+ currentCard=i;const item=cardData[i];
+ $('reasonNumber').textContent=`السبب ${String(i+1).padStart(2,'0')}`;
+ reasonTitle.value=item.title;reasonBody.value=item.text;
+ reasonTitle.readOnly=sealedMode;reasonBody.readOnly=sealedMode;
+ reasonModal.classList.add('show');reasonModal.setAttribute('aria-hidden','false');
+ if(!item.visited){item.visited=true;openedCount++;renderCards();updateProgress();}
+ if(!sealedMode)setTimeout(()=>reasonTitle.focus(),80);
+}
+function closeReason(){
+ if(currentCard!==null&&!sealedMode){
+  cardData[currentCard].title=reasonTitle.value.trim();
+  cardData[currentCard].text=reasonBody.value.trim();
+  renderCards();
+ }
+ reasonModal.classList.remove('show');reasonModal.setAttribute('aria-hidden','true');currentCard=null;
+}
+$('reasonClose').addEventListener('click',closeReason);
 reasonModal.addEventListener('click',e=>{if(e.target===reasonModal)closeReason()});
-reasonTitle.addEventListener('input',()=>{if(currentCard!==null)cardData[currentCard].title=reasonTitle.value});
-reasonBody.addEventListener('input',()=>{if(currentCard!==null)cardData[currentCard].text=reasonBody.value});
+reasonTitle.addEventListener('input',()=>{if(currentCard!==null&&!sealedMode){cardData[currentCard].title=reasonTitle.value;renderCardTitle(currentCard)}});
+reasonBody.addEventListener('input',()=>{if(currentCard!==null&&!sealedMode)cardData[currentCard].text=reasonBody.value});
+function renderCardTitle(i){const cards=grid.querySelectorAll('.card');if(cards[i])cards[i].querySelector('.card-title-preview').textContent=cardData[i].title||`السبب ${i+1}`;}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&reasonModal.classList.contains('show'))closeReason()});
-renderCards();
+renderCards();updateProgress();
 
-let musicHintTimer;document.getElementById('waxSeal').addEventListener('click',(e)=>{e.preventDefault();envelope.classList.add('opening');envelopeScreen.classList.add('hidden');cardsScreen.classList.remove('hidden');const hint=document.getElementById('musicHint');hint.classList.remove('hidden','hide');clearTimeout(musicHintTimer);musicHintTimer=setTimeout(()=>{hint.classList.add('hide');setTimeout(()=>hint.classList.add('hidden'),320)},3000)});
-document.getElementById('backBtn').addEventListener('click',()=>{if(!sealedMode){cardsScreen.classList.add('hidden');envelopeScreen.classList.remove('hidden');envelope.classList.remove('opening')}});
-function openZoom(t){document.getElementById('zoomText').textContent=t;document.getElementById('zoom-modal').classList.add('show')}function closeZoom(){document.getElementById('zoom-modal').classList.remove('show')}document.getElementById('zoomClose').addEventListener('click',closeZoom);
-document.getElementById('finalCover').addEventListener('click',()=>finalCard.classList.add('revealed'));
-const music=document.getElementById('backgroundMusic'),musicBtn=document.getElementById('musicBtn'),musicStatus=document.getElementById('musicStatus');musicBtn.addEventListener('click',async()=>{if(music.paused){try{await music.play();musicBtn.textContent='Ⅱ';musicStatus.textContent='الموسيقى تعمل الآن ♡'}catch(e){musicStatus.textContent='أضيفي ملف الموسيقى music.mp3 بجانب صفحة الموقع لتتمكّني من سماعها.'}}else{music.pause();musicBtn.textContent='♫';musicStatus.textContent='الموسيقى متوقفة مؤقتًا'}});
-function encodeData(d){const bytes=new TextEncoder().encode(JSON.stringify(d));let bin='';for(const b of bytes)bin+=String.fromCharCode(b);return btoa(bin).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/g,'')}function decodeData(s){let b=s.replace(/-/g,'+').replace(/_/g,'/');while(b.length%4)b+='=';const raw=atob(b),bytes=Uint8Array.from(raw,c=>c.charCodeAt(0));return JSON.parse(new TextDecoder().decode(bytes))}
-document.getElementById('sealEverything').addEventListener('click',async()=>{const reasons=cardDa
+let musicHintTimer;
+$('waxSeal').addEventListener('click',e=>{
+ e.preventDefault();
+ envelope.classList.add('opening');
+ envelopeScreen.classList.add('hidden');
+ cardsScreen.classList.remove('hidden');
+ if(!sealedMode){
+  const hint=$('musicHint');hint.classList.remove('hidden','hide');clearTimeout(musicHintTimer);
+  musicHintTimer=setTimeout(()=>{hint.classList.add('hide');setTimeout(()=>hint.classList.add('hidden'),320)},3000);
+ }
+});
+$('backBtn').addEventListener('click',()=>{
+ if(sealedMode)return;
+ cardsScreen.classList.add('hidden');envelopeScreen.classList.remove('hidden');envelope.classList.remove('opening');
+});
+$('finalCover').addEventListener('click',()=>finalCard.classList.add('revealed'));
+
+const music=$('backgroundMusic'),musicBtn=$('musicBtn'),musicStatus=$('musicStatus');
+musicBtn.addEventListener('click',async()=>{
+ if(music.paused){
+  try{await music.play();musicBtn.textContent='Ⅱ';musicStatus.textContent='الموسيقى تعمل الآن ♡';musicStatus.classList.remove('hidden')}
+  catch(e){musicStatus.textContent='الموسيقى غير متاحة حاليًا.';musicStatus.classList.remove('hidden')}
+ }else{music.pause();musicBtn.textContent='♫';musicStatus.textContent='الموسيقى متوقفة مؤقتًا';musicStatus.classList.remove('hidden')}
+});
+
+$('sealEverything').addEventListener('click',()=>{
+ if(openedCount!==11){$('progressText').textContent=`افتحي الأسباب الأحد عشر أولًا — اكتشفتِ ${openedCount} من ١١`;return;}
+ if(currentCard!==null)closeReason();
+ const encoded=encodeData(payload());
+ const base=location.href.split('#')[0];
+ const link=base+'#letter='+encodeURIComponent(encoded);
+ $('shareLink').value=link;
+ $('share-panel').classList.remove('hidden');
+ $('sealEverything').textContent='تم ختم الرسالة ♡';
+ shareCreated=true;
+});
+$('copyLink').addEventListener('click',async()=>{
+ const field=$('shareLink');
+ try{await navigator.clipboard.writeText(field.value);$('copyLink').textContent='نُسخ الرابط ✓'}
+ catch(e){field.focus();field.select();try{document.execCommand('copy');$('copyLink').textContent='نُسخ الرابط ✓'}catch(_){$('copyLink').textContent='حدّدي الرابط وانسخيه'}}
+});
+
+if(loadSharedData()){
+ renderCards();updateProgress();
+ $('progressText').textContent='إحدى عشرة رسالة صغيرة لكِ ♡';
+ $('progressFill').style.width='100%';
+ finalSection.classList.remove('hidden');
+ $('finalCard').classList.remove('revealed');
+ $('musicStatus').classList.add('hidden');
+}
+</script>
+</body>
+</html>
